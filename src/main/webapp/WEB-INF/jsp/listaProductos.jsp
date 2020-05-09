@@ -6,8 +6,14 @@
 	<s:param name="titulo"> Listado de Productos</s:param>
 </s:include>
 <h2>Lista de productos</h2>
+
+
+<s:bean var="compNombre" 
+    name="com.dred.struts.tiendastruts.productos.NombreProductoAscComparator"/>
+
+<s:sort comparator="#compNombre" source="listaProductos" >
 <ul class="articulo">
-<s:iterator value="listaProductos" var="p">
+<s:iterator var="p">
 	<li><div>
 		<h3><s:property value="[0].nombre"/></h3>
 		<p><s:property value="descripcion"/></p></div>
@@ -21,4 +27,6 @@
 		</li>
 </s:iterator>
 </ul>
+</s:sort>
+
 <s:include value="fin.jsp"/>

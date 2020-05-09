@@ -1,6 +1,7 @@
 package com.dred.struts.tiendastruts.productos;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -37,7 +38,7 @@ public class ListaProductoAction extends ActionSupport {
 				"Bolígrafo de gel de punta fina azul",1.45));
 		this.listaProductos.add(new Producto("Goma de Borrar",
 				"Goma de borrar con zona de borrado de bolígrafo",0.35));
-		this.listaProductos.add(new Producto("Cuaderno A%",
+		this.listaProductos.add(new Producto("Cuaderno A5",
 				"Libreta de rayas de tamaño A5",1.1));
 		this.listaProductos.add(new Producto("Lápiz",
 				"Lápiz de punta fina de 0.5 mm",0.55));
