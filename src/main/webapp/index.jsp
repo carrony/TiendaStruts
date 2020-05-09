@@ -14,7 +14,7 @@
 	<a href="<s:url action="crear_producto"/>">Insertar Productos Nuevos</a>
 	
 	<h2>Listado de Productos</h2>
-	<a href="<s:url action="listar_producto"/>">Listar Productos</a>
+	<a href="<s:url action="listar_productos"/>">Listar Productos</a>
 	
 </body>
 </html>

@@ -1,10 +1,18 @@
-package com.dred.struts.tiendastruts;
+package com.dred.struts.tiendastruts.productos;
 public class Producto {
 	private static final long serialVersionUID = 1L;
 
 	private String nombre;
 	private String descripcion;
 	private double precio;
+	
+	public Producto() {
+	}
+	public Producto(String nombre, String descripcion, double precio) {
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.precio = precio;
+	}
 	public String getNombre() {
 		return nombre;
 	}

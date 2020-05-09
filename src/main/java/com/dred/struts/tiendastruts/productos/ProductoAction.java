@@ -1,4 +1,4 @@
-package com.dred.struts.tiendastruts;
+package com.dred.struts.tiendastruts.productos;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -20,6 +20,5 @@ public class ProductoAction extends ActionSupport {
 	public String execute() throws Exception {
 		return SUCCESS;
 	}
-	
 	
 }

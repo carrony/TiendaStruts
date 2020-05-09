@@ -11,9 +11,14 @@
         </action>
         <action name="crear_producto" >
             <result>/WEB-INF/jsp/registroProducto.jsp</result>
+            <result name="type">/WEB-INF/jsp/registroProducto.jsp</result>
         </action>
-        <action name="registrar_producto" class="com.dred.struts.tiendastruts.ProductoAction">
+        <action name="registrar_producto" class="com.dred.struts.tiendastruts.productos.ProductoAction">
             <result>/WEB-INF/jsp/resumenProducto.jsp</result>
+            <result name="input">/WEB-INF/jsp/registroProducto.jsp</result>
+        </action>
+        <action name="listar_productos" class="com.dred.struts.tiendastruts.productos.ListaProductoAction">
+            <result>/WEB-INF/jsp/listaProductos.jsp</result>
         </action>
 
     </package>
