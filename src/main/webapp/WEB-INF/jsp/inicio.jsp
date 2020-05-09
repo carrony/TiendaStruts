@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title> <s:property value="#titulo"/> </title>
+	<title> ${param.titulo} </title>
 	<link type="text/css" rel="stylesheet" href="<s:url value='/css/estilo.css' />">
 </head>
 <body>

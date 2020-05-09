@@ -23,6 +23,7 @@ form > div {
  main {
      width: 80%;
      margin:20px auto;
+     padding: 20px;
  }
  .articulo {
      width:70%;
@@ -101,3 +102,8 @@ form > div {
     width: 75%;
     justify-content: space-around;
  }
+ 
+ .detalles { width: 280px; border:solid 2px black; 
+				background: aliceblue; padding:10px;}
+	.detalles li {display: flex; justify-content: space-between;}
+	.detalles strong { color:navy; font-size:1.4em;}

@@ -1,21 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-    <%@ taglib uri="/struts-tags" prefix="s"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<style>
-	.detalles { width: 280px; border:solid 2px black; 
-				background: aliceblue; padding:10px;}
-	.detalles li {display: flex; justify-content: space-between;}
-	.detalles strong { color:navy; font-size:1.4em;}
-</style>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 
-<title>Producto Procesado</title>
-</head>
-<body>
-	<h1>Artículo Procesado</h1>
+<s:include value="inicio.jsp">
+	<s:param name="titulo"> Producto Procesado</s:param>
+</s:include>
+	<h2>Artículo Procesado</h2>
 	<p>Tu artículo ha sido procesado correctamente</p>
 	<h2>Los detalles del artículo son:	</h2>
 	<ul class="detalles">
@@ -26,5 +16,4 @@
 		<li><p>Precio</p>
 			<p><strong><s:property value="producto.precio"/></strong></p></li>
 	</ul>
-</body>
-</html>
+<s:include value="fin.jsp"/>
