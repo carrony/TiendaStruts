@@ -1,17 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-
-<s:include value="inicio.jsp">
-<s:param name="titulo"> Listado de Productos</s:param>
-</s:include>
-<h2>Lista de productos</h2>
-<ul class="articulo">
-<s:iterator value="listaProductos" var="p">
-	<li><div>
-		<h3><s:property value="[0].nombre"/></h3>
-		<p><s:property value="descripcion"/></p></div>
-		<p><s:property value="#p.precio"/></p></li>
-</s:iterator>
-</ul>
-<s:include value="fin.jsp"/>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Listado de productos</title>
+	<style>
+		.detalles { border:solid 2px black; 
+				background: aliceblue; padding:10px;}
+		.detalles li {display: flex; justify-content: space-between;}
+		.detalles strong { color:navy; font-size:1.2em;}
+	</style>
+</head>
+<body>
+	<h1>Lista de productos</h1>
+	<s:iterator value="listaProductos" var="p">
+		<ul class="detalles">
+			<li><p>Nombre:</p> 
+				<p><strong><s:property value="[0].nombre"/></strong></p></li>
+			<li><p>Descripción</p>
+				<p><strong><s:property value="descripcion"/></strong></p></li>
+			<li><p>Precio</p>
+				<p><strong><s:property value="#p.precio"/></strong></p></li>
+		</ul>
+	</s:iterator>
+</body>
+</html>
