@@ -9,13 +9,9 @@
         <action name="index">
         	<result>/index.jsp</result>
         </action>
-        <action name="crear_producto" >
-            <result>/WEB-INF/jsp/registroProducto.jsp</result>
+        <action name="google">
+        	<result type="redirect">http://www.google.es</result>
         </action>
-        <action name="registrar_producto" class="com.dred.struts.tiendastruts.ProductoAction">
-            <result>/WEB-INF/jsp/resumenProducto.jsp</result>
-        </action>
-
     </package>
 
 </struts>
