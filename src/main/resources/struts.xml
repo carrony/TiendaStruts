@@ -14,8 +14,8 @@
         </action>
         <action name="registrar_producto" class="com.dred.struts.tiendastruts.ProductoAction">
             <result>/WEB-INF/jsp/resumenProducto.jsp</result>
+            <result name="input">/WEB-INF/jsp/registroProducto.jsp</result>
         </action>
-
     </package>
 
 </struts>

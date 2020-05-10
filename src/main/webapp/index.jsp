@@ -12,9 +12,5 @@
 	<h1>Bienvenido a la tienda!</h1>
 	<h2>Hola Administrador. </h2>
 	<a href="<s:url action="crear_producto"/>">Insertar Productos Nuevos</a>
-	
-	<h2>Listado de Productos</h2>
-	<a href="<s:url action="listar_producto"/>">Listar Productos</a>
-	
 </body>
 </html>
