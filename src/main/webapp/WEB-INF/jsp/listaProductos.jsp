@@ -3,8 +3,10 @@
 <%@ taglib uri="/struts-tags" prefix="s"%>
 
 <s:include value="inicio.jsp">
-	<s:param name="titulo"> Listado de Productos</s:param>
+<s:param name="titulo"> Listado de Productos</s:param>
 </s:include>
+
+	
 <h2>Lista de productos</h2>
 <ul class="articulo">
 <s:iterator value="listaProductos" var="p">

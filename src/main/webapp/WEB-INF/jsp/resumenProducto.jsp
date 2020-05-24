@@ -16,4 +16,8 @@
 		<li><p>Precio</p>
 			<p><strong><s:property value="producto.precio"/></strong></p></li>
 	</ul>
+	
+	
+	<s:set value="producto" var="prueba" scope="session"></s:set>
+	<a href="<s:url action='crear_producto'/>"> Introuducir otro</a>
 <s:include value="fin.jsp"/>

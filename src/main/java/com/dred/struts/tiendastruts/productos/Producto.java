@@ -2,13 +2,15 @@ package com.dred.struts.tiendastruts.productos;
 public class Producto {
 	private static final long serialVersionUID = 1L;
 
+	private int id;
 	private String nombre;
 	private String descripcion;
 	private double precio;
 	
 	public Producto() {
 	}
-	public Producto(String nombre, String descripcion, double precio) {
+	public Producto(int id, String nombre, String descripcion, double precio) {
+		this.id=id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.precio = precio;
@@ -30,6 +32,12 @@ public class Producto {
 	}
 	public void setPrecio(double precio) {
 		this.precio = precio;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

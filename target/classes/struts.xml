@@ -4,23 +4,41 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.custom.i18n.resources" value="global" />
+    
 
     <package name="myPackage" extends="struts-default">
         <action name="index">
         	<result>/index.jsp</result>
         </action>
-        <action name="crear_producto" >
-            <result>/WEB-INF/jsp/registroProducto.jsp</result>
-            <result name="type">/WEB-INF/jsp/registroProducto.jsp</result>
-        </action>
-        <action name="registrar_producto" class="com.dred.struts.tiendastruts.productos.ProductoAction">
-            <result>/WEB-INF/jsp/resumenProducto.jsp</result>
+        
+        <action name="crear_producto" class="com.dred.struts.tiendastruts.productos.ProductoAction">
+            <result type="redirectAction">listar_productos</result>
             <result name="input">/WEB-INF/jsp/registroProducto.jsp</result>
         </action>
-        <action name="listar_productos" class="com.dred.struts.tiendastruts.productos.ListaProductoAction">
-            <result>/WEB-INF/jsp/listaProductos.jsp</result>
+        
+        <action name="listar_productos" method="mostrar" class="com.dred.struts.tiendastruts.productos.ProductoAction">
+            <result>/WEB-INF/jsp/registroProducto.jsp</result>
+            <result name="input">/WEB-INF/jsp/registroProducto.jsp</result>
         </action>
-
+       <action name="eliminar_producto" method="eliminar" 
+                class="com.dred.struts.tiendastruts.productos.ProductoAction">
+            <result type="redirectAction">listar_productos</result>
+        </action>
+      
+         
+        <action name="editar_producto" method="editar" 
+                class="com.dred.struts.tiendastruts.productos.ProductoAction">
+                <interceptor-ref name="paramsPrepareParamsStack"/>
+                <result name="input">/WEB-INF/jsp/editarProducto.jsp</result>
+            <result>/WEB-INF/jsp/editarProducto.jsp</result>
+        </action>
+        <action name="modificar_producto" method="modificar" 
+                class="com.dred.struts.tiendastruts.productos.ProductoAction">
+            <result type="redirectAction">listar_productos</result>
+            <result name="input">/WEB-INF/jsp/editarProducto.jsp</result>
+        </action>
+         
     </package>
 
 </struts>

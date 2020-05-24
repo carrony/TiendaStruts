@@ -8,9 +8,11 @@
 	<meta charset="UTF-8">
 	<title> ${param.titulo} </title>
 	<link type="text/css" rel="stylesheet" href="<s:url value='/css/estilo.css' />">
+	
+	<script src="https://kit.fontawesome.com/780b91c08b.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
-        <h1>Curso IFCT034PO - Desarrollo de aplicaciones con java </h1>
+        <h1><s:text name="tituloCurso"/> </h1>
     </header>
     <main>
