@@ -11,6 +11,17 @@
         <action name="index">
         	<result>/index.jsp</result>
         </action>
+
+        <action name="action1">
+        	<result>/WEB-INF/jsp/form-textarea.jsp</result>
+        </action>
+        <action name="ajax1">
+        	<result>/WEB-INF/jsp/ajax1.jsp</result>
+        </action>
+        <action name="echo"  class="com.dred.struts.tiendastruts.ajax.Echo">
+        	<result>/WEB-INF/jsp/echo.jsp</result>
+        </action>
+        
         
         <action name="crear_producto" class="com.dred.struts.tiendastruts.productos.ProductoAction">
 	        <interceptor-ref name="fileUpload">
