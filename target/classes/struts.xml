@@ -13,6 +13,13 @@
         </action>
         
         <action name="crear_producto" class="com.dred.struts.tiendastruts.productos.ProductoAction">
+	        <interceptor-ref name="fileUpload">
+		        <param name="maximumSize">5242880</param>
+		        <param name="allowedTypes">
+		               image/gif, image/jpeg, image/png</param>
+		    </interceptor-ref>
+		    <interceptor-ref name="basicStack"/>
+        
             <result type="redirectAction">listar_productos</result>
             <result name="input">/WEB-INF/jsp/registroProducto.jsp</result>
         </action>
@@ -29,6 +36,12 @@
          
         <action name="editar_producto" method="editar" 
                 class="com.dred.struts.tiendastruts.productos.ProductoAction">
+                <interceptor-ref name="fileUpload">
+		        <param name="maximumSize">5242880</param>
+		        <param name="allowedTypes">
+		               image/gif, image/jpeg, image/png</param>
+		    </interceptor-ref>
+		    <interceptor-ref name="basicStack"/>
                 <interceptor-ref name="paramsPrepareParamsStack"/>
                 <result name="input">/WEB-INF/jsp/editarProducto.jsp</result>
             <result>/WEB-INF/jsp/editarProducto.jsp</result>

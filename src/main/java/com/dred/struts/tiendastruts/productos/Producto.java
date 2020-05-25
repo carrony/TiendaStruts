@@ -6,6 +6,7 @@ public class Producto {
 	private String nombre;
 	private String descripcion;
 	private double precio;
+	private String rutaImagen;
 	
 	public Producto() {
 	}
@@ -38,6 +39,12 @@ public class Producto {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public String getRutaImagen() {
+		return rutaImagen;
+	}
+	public void setRutaImagen(String rutaImagen) {
+		this.rutaImagen = rutaImagen;
 	}
 	
 }

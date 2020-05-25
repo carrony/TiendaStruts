@@ -1,6 +1,11 @@
 package com.dred.struts.tiendastruts.productos;
 
+import java.io.File;
 import java.util.ArrayList;
+
+import javax.servlet.ServletContext;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.dred.struts.tiendastruts.modelos.ProductoDAO;
 import com.opensymphony.xwork2.Action;
@@ -16,6 +21,9 @@ public class ProductoAction extends ActionSupport
 	private ArrayList<Producto> listaProductos;
 	private Producto producto;
 	private int idProducto=0;
+	private File foto;
+	private String fotoFileName;
+		private String fotoContentType;
 
 
 	public ArrayList<Producto> getListaProductos() {
@@ -28,9 +36,24 @@ public class ProductoAction extends ActionSupport
 		this.listaProductos = listaProductos;
 	}
 	
+	public void copiarFichero() {
+		if (this.fotoFileName!=null) {
+			producto.setRutaImagen(fotoFileName);
+			//copiamos el archivo en la carpeta images
+			ServletContext context=ServletActionContext.getServletContext();
+			String carpeta=context.getRealPath("/images");
+			File nuevaImagen = new File(carpeta,this.fotoFileName);
+			this.foto.renameTo(nuevaImagen);
+		} else {
+			producto.setRutaImagen("");
+		}
+	}
+	
 	public String execute() {
+		copiarFichero();
 		ProductoDAO pDAO = new ProductoDAO();
 		pDAO.addProducto(producto);
+		
 		return SUCCESS;
 	}
 	
@@ -39,6 +62,7 @@ public class ProductoAction extends ActionSupport
 	}
 	
 	public String modificar() throws Exception {
+		copiarFichero();
 		ProductoDAO pDAO = new ProductoDAO();
 		pDAO.editarProducto(producto);
 		return Action.SUCCESS;	
@@ -85,6 +109,30 @@ public class ProductoAction extends ActionSupport
 
 	public void setProducto(Producto producto) {
 		this.producto = producto;
+	}
+
+	public File getFoto() {
+		return foto;
+	}
+
+	public void setFoto(File foto) {
+		this.foto = foto;
+	}
+
+	public String getFotoContentType() {
+		return fotoContentType;
+	}
+
+	public void setFotoContentType(String fotoContentType) {
+		this.fotoContentType = fotoContentType;
+	}
+
+	public String getFotoFileName() {
+		return fotoFileName;
+	}
+
+	public void setFotoFileName(String fotoFileName) {
+		this.fotoFileName = fotoFileName;
 	}
 	
 	

@@ -6,10 +6,11 @@
 	<s:param name="titulo"> <s:text name="editarProductoTitle"/></s:param>
 </s:include>
 	<h2><s:text name="editarProducto"/></h2>
-	<s:form action="modificar_producto" >
+	<s:form action="modificar_producto" enctype="multipart/form-data" >
 		<s:textfield key="producto.nombre"/>
 		<s:textfield key="producto.descripcion"/>
 		<s:textfield key="producto.precio"/>
+		<s:file key="foto"/>
 		<s:hidden key="producto.id" />
 		<s:submit key="anadir"/>
 	</s:form>

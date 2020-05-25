@@ -78,12 +78,13 @@ public class ProductoDAO extends ModeloDAO {
 			try {
 				// Abrimos la conexion desde la clase padre
 				conexion = super.getConnection();
-				consulta = "INSERT INTO productos( nombre, descripcion, precio) " + 
-						"VALUES (?,?,?)";
+				consulta = "INSERT INTO productos( nombre, descripcion, precio, rutaImagen) " + 
+						"VALUES (?,?,?,?)";
 				ps = conexion.prepareStatement(consulta);
 				ps.setString(1, p.getNombre());
 				ps.setString(2, p.getDescripcion());
 				ps.setDouble(3, p.getPrecio());
+				ps.setString(4, p.getRutaImagen());
 				error=ps.executeUpdate();
 			} catch (SQLException ex) {
 				System.out.println("Error en addProducto en ProductoDAO");
@@ -131,13 +132,14 @@ public class ProductoDAO extends ModeloDAO {
 					// Abrimos la conexion desde la clase padre
 					conexion = super.getConnection();
 					consulta = "UPDATE productos SET nombre=?,descripcion=?,"
-							+ "precio=? WHERE id=?";
+							+ "precio=?, rutaImagen=? WHERE id=?";
 					ps = conexion.prepareStatement(consulta);
 					
 					ps.setString(1, p.getNombre());
 					ps.setString(2, p.getDescripcion());
 					ps.setDouble(3, p.getPrecio());
-					ps.setInt(4, p.getId());
+					ps.setString(4, p.getRutaImagen());
+					ps.setInt(5, p.getId());
 					error=ps.executeUpdate();
 				} catch (SQLException ex) {
 					System.out.println("Error en editarProducto en ProductoDAO");
@@ -174,6 +176,11 @@ public class ProductoDAO extends ModeloDAO {
 					p.setPrecio(0);
 				} else {
 					p.setPrecio(rs.getDouble("precio"));
+				}
+				if (rs.getString("rutaImagen")==null) {
+					p.setRutaImagen("");
+				} else {
+					p.setRutaImagen(rs.getString("rutaImagen"));
 				}
 			}
 		} catch (SQLException ex) {

@@ -5,11 +5,12 @@
 <s:include value="inicio.jsp">
 	<s:param name="titulo"> <s:text name="nuevoProductoTitle"/></s:param>
 </s:include>
-	<h2><s:text name="nuevoProducto"/></h2>
-	<s:form action="crear_producto">
+	<h2><s:text name="nuevoProducto"  /></h2>
+	<s:form action="crear_producto" enctype="multipart/form-data">
 		<s:textfield key="producto.nombre"/>
 		<s:textfield key="producto.descripcion"/>
 		<s:textfield key="producto.precio"/>
+		<s:file key="foto"/>
 		<s:submit key="anadir"/>
 	</s:form>
 	
@@ -19,6 +20,9 @@
 <s:iterator value="listaProductos" var="p">
 	<li><div>
 		<h3><s:property value="[0].nombre"/></h3>
+		<p><s:if test="#p.rutaImagen!=null">
+			    <img src="/TiendaStruts/images/${p.rutaImagen}" />
+			 </s:if></p>
 		<p><s:property value="descripcion"/></p></div>
 		<p><s:property value="#p.precio"/></p>
 		<s:url action="ver_carrito" var="carritolink">
