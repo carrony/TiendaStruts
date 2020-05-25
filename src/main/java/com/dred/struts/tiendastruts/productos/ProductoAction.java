@@ -23,7 +23,7 @@ public class ProductoAction extends ActionSupport
 	private int idProducto=0;
 	private File foto;
 	private String fotoFileName;
-		private String fotoContentType;
+	private String fotoContentType;
 
 
 	public ArrayList<Producto> getListaProductos() {

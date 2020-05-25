@@ -51,6 +51,15 @@
             <result type="redirectAction">listar_productos</result>
             <result name="input">/WEB-INF/jsp/editarProducto.jsp</result>
         </action>
+        <action name="esperar_tarea" method="execute" 
+                class="com.dred.struts.tiendastruts.espera.EsperaDefectoAction">
+	            <interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="execAndWait">
+					<param name="delay">1000</param>
+				</interceptor-ref>
+			<result>/WEB-INF/jsp/finEspera.jsp</result>
+        </action>
+        
          
     </package>
 

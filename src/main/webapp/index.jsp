@@ -19,5 +19,7 @@
 	
 	<p><a href="${linkEspanol}"><s:text name="listaProductosEs"/></a></p>
 
-	
+	<s:url action="esperar_tarea" var="linkEspera"/>
+	<p><a href="${linkEspera}"><s:text name="linkEspera"/></a></p>
+		
 <s:include value="/WEB-INF/jsp/fin.jsp"/>
