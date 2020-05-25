@@ -60,6 +60,15 @@
 			<result>/WEB-INF/jsp/finEspera.jsp</result>
         </action>
         
+        <action name="esperar_tareaProgreso" method="execute" 
+                class="com.dred.struts.tiendastruts.espera.EsperaPersonalizadaAction">
+	            <interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="execAndWait">
+					<param name="delay">1500</param>
+				</interceptor-ref>
+			<result name="wait">/WEB-INF/jsp/espera.jsp</result>
+			<result>/WEB-INF/jsp/finEspera.jsp</result>
+        </action>
          
     </package>
 

@@ -21,5 +21,8 @@
 
 	<s:url action="esperar_tarea" var="linkEspera"/>
 	<p><a href="${linkEspera}"><s:text name="linkEspera"/></a></p>
+	
+	<s:url action="esperar_tareaProgreso" var="linkEspera2"/>
+	<p><a href="${linkEspera2}"><s:text name="linkEsperaPersonalizado"/></a></p>
 		
 <s:include value="/WEB-INF/jsp/fin.jsp"/>
