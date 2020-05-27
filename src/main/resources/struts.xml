@@ -38,7 +38,16 @@
             <result type="redirectAction">listar_productos</result>
             <result name="input">/WEB-INF/jsp/editarProducto.jsp</result>
         </action>
-         
+
+		<action name="descargar_imagen" 
+		        class="com.dred.struts.tiendastruts.descargas.DescargarAction">
+		    <result name="success" type="stream">
+		        <param name="inputName">inputStream</param>
+		        <param name="contentType">aplicación/bytestream</param>
+		        <param name="contentDisposition">filename="elnombredemiimagen.png"</param>
+		        <param name="bufferSize">2048</param>
+		    </result>
+		</action>
     </package>
 
 </struts>

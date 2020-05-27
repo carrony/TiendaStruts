@@ -19,5 +19,11 @@
 	
 	<p><a href="${linkEspanol}"><s:text name="listaProductosEs"/></a></p>
 
+	<s:url action="descargar_imagen" var="linkDescarga">
+		<s:param name="rutaArchivo">/images/goma.png</s:param>
+	</s:url>
+	<p><a href="${linkDescarga}">Descargar Imagen</a></p>
 	
 <s:include value="/WEB-INF/jsp/fin.jsp"/>
+
+
